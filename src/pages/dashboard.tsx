@@ -14,10 +14,6 @@ export default function Dashboard() {
     api.get("/me").then((response) => console.log(response));
   }, []);
 
-  const userCanSeeMetrics = useCan({
-    permissions: ["metrics.list"]
-  });
-
   return (
     <Stack minH={"100vh"} justifyContent={"center"} align="center">
       <Heading>Oba, parece que vc está logado!</Heading>
@@ -34,8 +30,9 @@ export default function Dashboard() {
 
       <Button onClick={signOut}>Sair</Button>
 
-      <Can permissions={["metrics.list"]}>
-        <Heading fontSize={12}>Métricas</Heading>
+      {/*Uma outra forma é só deixar administrator*/}
+      <Can permissions={["metrics.list"]}> 
+        <Heading fontSize={24}>Métricas</Heading>
       </Can>
     </Stack>
   );
