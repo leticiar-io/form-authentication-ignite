@@ -5,25 +5,27 @@ import {
   Button,
   Text,
   Image,
-  Input} from "@chakra-ui/react";
+  Input
+} from "@chakra-ui/react";
 import { FormEvent, useContext, useState } from "react";
 import { AuthContext } from "../contexts/AuthContext";
+import { withSSRGuest } from "../utils/withSSRGuest";
 
 export default function Home() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
   const { signIn } = useContext(AuthContext)
 
-  async function handleSubmitForm(event : FormEvent) {
+  async function handleSubmit(event: FormEvent) {
     event.preventDefault();
 
     const data = {
       email,
-      password
+      password,
     }
 
-    await signIn(data)
+    await signIn(data);
   }
 
   return (
@@ -58,7 +60,7 @@ export default function Home() {
             maxWidth={360}
             borderRadius={8}
             flexDir="column"
-            onSubmit={handleSubmitForm}
+            onSubmit={handleSubmit}
           >
             <Stack spacing="4">
               <Input
@@ -79,11 +81,7 @@ export default function Home() {
               />
             </Stack>
 
-            <Button
-              type="submit"
-              mt="6"
-              colorScheme="purple"
-            >
+            <Button type="submit" mt="6" colorScheme="purple">
               Entrar
             </Button>
           </Flex>
@@ -103,3 +101,10 @@ export default function Home() {
     </Stack>
   );
 }
+
+
+export const getServerSideProps = withSSRGuest(async (ctx) => {
+  return {
+    props: {}
+  }
+});
