@@ -92,7 +92,7 @@ export default function Home() {
           alt={"Login Image"}
           objectFit={"cover"}
           src={
-            "https://img.freepik.com/fotos-gratis/feliz-mulher-segurando-sua-bagagem-e-passagem-de-aviao_23-2148521310.jpg?w=1480&t=st=1670332404~exp=1670333004~hmac=554c24330dbf044c6605db888c98ab21c0851e523da1b9751fdf83e5e56753dd.svg"
+            "landscape.svg"
           }
           maxHeight={"100vh"}
           width={"100%"}
