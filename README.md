@@ -1,7 +1,7 @@
 # Tela de Autenticação
 
 ## Preview da aplicação: 
-![imagem](https://github.com/leticia-rodriguesf/nlw-letmeask/blob/main/src/assets/images/cover.svg)
+![imagem](public/frame.jpg)
 
 <bt/>
 
